@@ -1,0 +1,68 @@
+//METHOD 1
+
+// https://www.geeksforgeeks.org/problems/segregate-0s-and-1s5106/1
+
+// Given an array arr consisting of only 0's and 1's in random order. Modify the array in-place to 
+// segregate 0s onto the left side and 1s onto the right side of the array.
+
+// Examples :
+
+// Input: arr[] = [0, 0, 1, 1, 0]
+// Output: [0, 0, 0, 1, 1]
+// Explanation:  After segregation, all the 0's are on the left and 1's are on the right. Modified array will be [0, 0, 0, 1, 1].
+// Input: arr[] = [1, 1, 1, 1]
+// Output: [1, 1, 1, 1]
+// Explanation: There are no 0s in the given array, so the modified array is [1, 1, 1, 1]
+// Expected Time Complexity: O(n)
+// Expected Auxiliary Space: O(1)
+
+// Constraints:
+// 1 ≤ arr.size() ≤ 106
+// 0 ≤ arr[i] ≤ 1
+
+
+// APPROACH:
+// 1. JUST SORT THE GIVEN ARRAY
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void separate(vector <int> &arr)
+{
+    sort(arr.begin(), arr.end());
+}
+
+void input_array(vector <int> &arr, int n)
+{
+    for(int idx = 0; idx < n; idx++)
+    {
+        cin >> arr[idx];
+    }
+}
+
+void print_array(vector <int> &arr, int n)
+{
+    for(int idx = 0; idx < n; idx++)
+    {
+        cout << arr[idx] << " ";
+    }
+}
+
+int main()
+{
+    int n;
+    cout << "enter number of elements: " << endl;
+    cin >> n;
+
+    vector < int> arr(n);
+
+    cout << "enter elements:" << endl;
+    input_array(arr, n);
+
+    separate(arr);
+
+    print_array(arr, n);
+    
+    return 0;
+}
+

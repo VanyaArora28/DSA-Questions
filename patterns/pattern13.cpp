@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void pattern13(int num)
+{
+    int number = 1;
+
+    for(int row = 0; row < num; row++)
+    {
+        for(int col = 0; col <= row; col++)
+        {
+            cout << number << " ";
+            number++;
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+
+    for(int idx = 0; idx < t; idx++)
+    {
+        int num;
+        cin >> num;
+
+        pattern13(num);
+    }
+    return 0;
+}
